@@ -85,7 +85,7 @@ keys = [
 
     # applications
     Key([mod], "Return", lazy.spawn("konsole")),
-    Key([], "XF86Mail", lazy.spawn("/home/fungos/Qt/Tools/QtCreator/bin/qtcreator")),
+    Key([], "XF86Mail", lazy.spawn("~/Qt/Tools/QtCreator/bin/qtcreator")),
     Key([], "XF86HomePage", lazy.spawn("firefox")),
     Key([], "XF86Calculator", lazy.spawn("kcalc")),
     #Key([], "XF86Sleep", )),
