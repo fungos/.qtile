@@ -75,6 +75,7 @@ keys = [
     # Toggle between different layouts as defined below
     Key([mod], "Tab", lazy.nextlayout()),
     Key([mod], "w", lazy.window.kill()),
+    Key([mod, "shift"], "F1", lazy.window.toggle_floating()),
 
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
@@ -172,7 +173,7 @@ mouse = [
 dgroups_key_binder = None
 dgroups_app_rules = []
 main = None
-follow_mouse_focus = True
+follow_mouse_focus = False
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating()
@@ -183,4 +184,6 @@ def floating_dialogs(window):
     dialog = window.window.get_wm_type() == 'dialog'
     transient = window.window.get_wm_transient_for()
     if dialog or transient:
+        window.floating = True
+    if window.name == "MPlayer":
         window.floating = True
